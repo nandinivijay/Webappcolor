@@ -1,0 +1,79 @@
+To view the contents of a Dockerfile, you can use several commands. Here are a few options:
+
+Using cat:
+   cat /root/webapp-color/Dockerfile
+
+Using less:
+   less /root/webapp-color/Dockerfile
+
+Using more:
+   more /root/webapp-color/Dockerfile
+
+Using vi or vim:
+   vi /root/webapp-color/Dockerfile
+
+Using grep to find specific lines (e.g., the base image):
+   grep -i FROM /root/webapp-color/Dockerfile
+
+These commands will help you inspect the Dockerfile to find the base image or any other details you need. Let me know if you need further assistance! 😊
+
+***************************************************************************************************
+
+To read a Dockerfile, you can use several commands in the terminal. Here are a few options:
+
+cat: This command will display the entire content of the Dockerfile.
+   cat Dockerfile
+
+less: This allows you to scroll through the file content.
+   less Dockerfile
+
+more: Similar to less, but with slightly different navigation.
+   more Dockerfile
+
+vi or nano: These are text editors that allow you to view and edit the file.
+   vi Dockerfile
+
+or
+
+   nano Dockerfile
+
+grep: If you're looking for a specific line, like ENTRYPOINT, you can use:
+   grep ENTRYPOINT Dockerfile
+
+Since you're working on a task related to the webapp-color directory, make sure you're in the correct directory where the Dockerfile is located before running these commands. If you need to navigate to the directory, you can use:
+
+cd /path/to/webapp-color
+
+Let me know if you need further assistance! 
+***************************************************************************************************
+Move to the directory first by using the cd command and verify the path of the working directory from pwd command :-
+
+$ cd /root/webapp-color/
+$ pwd
+/root/webapp-color
+Now, run the docker build command within that directory :-
+
+$ docker build -t webapp-color . 
+NOTE: At the end of the command, we used the "." (dot) symbol which indicates for the current directory, so you need to run this command from within the directory that has the Dockerfile.
+
+***************************************************************************************************
+To run a Docker container from an image, you can use the docker run command. Here's a basic example of how you can do this:
+
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+For your specific task, you need to run an instance of the image webapp-color and map port 8080 on the container to port 8282 on the host. You can achieve this with the following command:
+
+docker run -p 8282:8080 webapp-color
+
+Here's a breakdown of the command:
+
+docker run: This is the command to start a new container.
+-p 8282:8080: This option maps port 8080 inside the container to port 8282 on your host machine.
+webapp-color: This is the name of the image you want to run.
+Make sure you have the webapp-color image available locally. If not, Docker will try to pull it from a Docker registry.
+
+If you have any more questions or need further assistance, feel free to ask! 😊
+
+*****
+
+
